@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+  //[0,10)
+  // Math.floor(Math.random() * 10);
+
+  //生成[0,10]的随机整数
+  //向下取整、向上取整、四舍五入
+  //[0,10]
+  Math.round(Math.random() * 10);
+
+
+  //生成[5,20]的随机数  [0,15]
+  console.log(Math.round(Math.random() * 15) + 5);
+
+
+  // 1. 生成[m,n]的随机整数
+  // console.log(Math.round(Math.random() * (n - m)) + m);
+
+  // 2. 生成随机的RGB颜色
+  var red = Math.round(Math.random() * 255);
+  var green = Math.round(Math.random() * 255);
+  var blue = Math.round(Math.random() * 255);
+
+  var box = document.getElementById("box");
+  box.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+
+  // 3. 模拟实现max和min方法
+  // Math它是一个对象还是一个构造函数呢？
+  var MyMath = {
+    PI: 3.141592653,
+    E: 2.71828,
+    OnePlusOne: 2,
+
+    max: function () {
+      var max = arguments[0];
+      for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+          max = arguments[i];
+        }
+      }
+      return max;
+    },
+
+    min: function () {
+      var min = arguments[0];
+      for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] < min) {
+          min = arguments[i];
+        }
+      }
+      return min;
+    }
+  };
+
+
+  console.log(MyMath.PI);
+  console.log(MyMath.OnePlusOne);
+  console.log(MyMath.max(4, 5, 12, 8, 9));
+  console.log(MyMath.min(4, 5, 12, 8, 9));
+</script>
+</body>
+</html>

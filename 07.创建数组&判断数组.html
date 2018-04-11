@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //创建数组的两种方式
+  //1. 使用Array构造函数
+  var arr1 = new Array();  //创建了一个空的数组
+
+  var arr2 = new Array(5);  //创建了一个数组，它的长度是5
+
+  var arr3 = new Array(5,8);  //创建了一个数组，它里面有两个值5,8
+
+  //2. 使用数组的字面量
+  var arr4 = [5,9,3,4,7];
+
+
+  var a = 34;
+  //判断一个变量是否是一个数组
+  //1. 使用instanceof运算符可以判断一个变量是否是一个数组
+  console.log(arr1 instanceof Array);  //true
+  console.log(a instanceof Array);  //false
+
+  //2. Array也提供了另一个方法判断一个变量是否是一个数组
+  console.log(Array.isArray(arr2));  //true
+  console.log(Array.isArray(a));  //false
+</script>
+</body>
+</html>

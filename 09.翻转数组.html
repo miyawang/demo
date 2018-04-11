@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var arr = [8, 5, 2, 1, 4];
+
+  //1. 倒序的遍历一遍
+  // var newArr = [];
+  // for (var i = arr.length - 1; i >= 0; i--) {
+  //   newArr.push(arr[i]);
+  // }
+  // console.log(newArr);
+
+  //2.直接在原数组上翻转
+  // for (var i = 0; i < arr.length / 2; i++) {
+  //   // arr[i] 和 arr[arr.length - 1 - i]进行交换
+  //   var temp = arr[i];
+  //   arr[i] = arr[arr.length - 1 - i];
+  //   arr[arr.length - 1 - i] = temp;
+  // }
+  // console.log(arr);
+
+  //数组提供的翻转数组的方法
+  //参数：不需要参数
+  //返回值：返回值是被翻转后的数组
+  var newArr = arr.reverse();
+  console.log(newArr);
+  console.log(arr);
+</script>
+</body>
+</html>

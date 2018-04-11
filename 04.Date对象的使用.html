@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //date 日期
+  var date1 = new Date();  //创建一个日期对象
+  console.log(date1);
+
+  //只设定了日期，没有设定时间。默认时间是世界标准时00:00:00
+  var date2 = new Date("2018-01-12");
+  console.log(date2);
+
+  var date3 = new Date(2018,0,13);  //月份是0开始
+  console.log(date3);
+
+  //给一个毫秒数。从1970年1月1日00:00:00(世界标准时)开始到现在的毫秒数
+  var date4 = new Date(1498099000356);
+  console.log(date4);
+
+</script>
+</body>
+</html>
