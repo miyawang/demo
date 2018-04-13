@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		button {
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+
+	<button>按钮</button>
+	<button>按钮</button>
+	<button>按钮</button>
+	<button>按钮</button>
+	<button>按钮</button>
+	<button>按钮</button>
+	<button>按钮</button>
+	<button>按钮</button>
+
+	<script>
+		// 1 获取元素
+		var btns = document.getElementsByTagName('button');
+
+		// 设置一个变量用于记录上次点击的元素在btns中的下标
+		var index = 0;
+
+		// 2 遍历
+		for (var i = 0; i < btns.length; i++) {
+
+			// 4 使用行内自定义属性保存当前元素的下标
+			// btns[i].setAttribute('data-index', i);
+
+			// 标签本质是对象,所以也可以设置属性和方法
+			btns[i].index = i;
+
+			// 3 添加事件
+			btns[i].onclick = function () {
+				// 希望可以找到上次点击过的元素，进行背景色的还原即可
+				// 3.1 根据index中保存的下标，进行背景色的清除
+				btns[index].style.backgroundColor = 'orange';
+				// 3.2 将当前按钮设置为red
+				this.style.backgroundColor = 'red';
+				// 3.3 将当前按钮的下标保存在index中即可，方便下次点击使用
+				// 问题：需要知道当前按钮的下标
+				// index = this.getAttribute('data-index');
+
+				index = this.index;
+			};
+		}
+
+	
+
+
+	</script>
+	
+</body>
+</html>

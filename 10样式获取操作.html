@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		div {
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="box"></div>
+
+	<script>
+		
+		var box = document.getElementById('box');
+		// box.style.width = '100px';
+
+		// 我们发现使用style方式获取样式只能获取标签的行内样式
+		// console.log(box.style.width);
+
+
+		// 获取元素样式的方式：
+		// getComputedStyle(); // 获取计算后的样式
+		// 传入一个标签，返回这个标签的所有样式
+		// 如果希望访问具体的某一个属性，需要再通过返回值访问
+		// console.log(getComputedStyle(box).width);
+
+
+		// 此方法在ie9以下不支持
+		// ie支持一个currentStyle的属性
+
+		// console.log(box.currentStyle.width);
+
+		// 上面两个功能均无法兼容所有浏览器，需要使用能力检测方式进行兼容。
+
+
+
+		if (typeof getComputedStyle === 'function') {
+			// 说明支持这个功能
+			console.log(getComputedStyle(box).width);
+		} else {
+			// 使用currentStyle
+			console.log(box.currentStyle.width);
+		}
+
+		getStyle(box, 'width');
+		// 完成下面的函数封装
+		function getStyle (element, attrName) {
+			// 当对象的属性名是字符串形式时，一定要使用[]的属性访问方式
+
+		}
+
+
+
+	</script>
+
+</body>
+</html>

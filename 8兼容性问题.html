@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div id="box">aaa</div>
+
+	<script>
+		
+		// 如果我们使用某一个功能，而这个功能无法被所有浏览器支持，我们就成这个功能具有兼容性问题。
+
+		// 纯文本操作兼容：
+		// 1 innerText 
+		// innerText 属性在火狐45以下不支持
+
+		// 2 textContent 
+		// 标准属性 用于纯文本设置 ie678不支持
+
+		// 我们发现innerText 和 textContent 在功能上是相同的，但兼容性不同，可是却可以一起被所有浏览器支持（各自覆盖部分浏览器）
+
+		// 可以使用代码对功能进行整体设置，使纯文本操作可以在所有浏览器中同时执行
+
+
+		// 使用能力检测方式进行兼容：
+		// 基本套路：检测其中一个属性，如果可用，使用，如果不可用，使用另外一个
+
+		var box = document.getElementById('box');
+		// 如果属性不存在，值为undefined
+		//    也可以检测值是否为string，效果是一样的
+		if (typeof box.innerText !== 'undefined') {
+			// 说明支持innerText属性，使用即可
+			console.log(box.innerText);
+		} else {
+			// 说明支持textContent
+			console.log(box.textContent);
+		}
+
+	</script>
+
+</body>
+</html>

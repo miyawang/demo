@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<button id="btn">按钮</button>
+	<img id="pic" src="images/01big.jpg" alt="">
+
+	<script>
+		var btn = document.getElementById('btn');
+		var pic = document.getElementById('pic');
+
+		// 基本设置方式：
+		/*
+			var count = 1; // count表示当前显示的图片张数
+			btn.onclick = function () {
+				// 修改count值
+				count++;
+				if (count === 6) {
+					count = 1;// 如果count超出最大值，让count的值还原为1
+				}
+				// 修改pic的背景图
+				pic.src = 'images/0' + count + 'big.jpg';
+			};
+		*/
+
+		// 推荐方式：
+		//    使用数组作为地址的容器，这样不需要考虑图片名称了，使用下标即可
+		var arr = ['images/01big.jpg', 'images/02big.jpg', 'images/03big.jpg', 'images/04big.jpg', 'images/05big.jpg'];
+
+		// 设置一个变量index，表示当前图片地址的下标值
+		var index = 0;
+
+		btn.onclick = function () {
+				// 修改index值
+				index++;
+				if (index === arr.length) {
+					index = 0;// 如果index超出最大值，让index的值还原为0
+				}
+				// 修改pic的背景图
+				pic.src = arr[index];
+			};
+
+	</script>
+
+
+</body>
+</html>

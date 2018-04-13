@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.colorRed {
+			background-color: red !important;
+		}
+	</style>
+</head>
+<body>
+	
+	<ul>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+	</ul>
+
+	<script>
+		
+		var lis = document.getElementsByTagName('li');
+		// 获取lis中所有的li
+		for (var i = 0; i < lis.length; i++) {
+			if (i % 2 === 0) {
+				lis[i].style.backgroundColor = 'hotpink';
+			} else {
+				lis[i].style.backgroundColor = 'skyblue';
+			}
+
+			// 在循环中给所有的li设置事件
+			lis[i].onmouseover = function () {
+				// 设置一个不同的背景色：
+				// this.style.backgroundColor = 'red';
+				// 统一修改为类名设置方式：
+				this.className = 'colorRed';
+			};
+
+			lis[i].onmouseout = function () {
+				// 需要将颜色还原为以前的颜色
+				// 遇到问题：无法知道当前li以前的颜色
+				// 解决方式：使用类名
+				this.className = '';
+			};
+
+		}
+ 
+
+	</script>
+
+</body>
+</html>
