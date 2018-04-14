@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="xianShi">显示</button>
+	<button id="hide">隐藏</button>
+	<div id="box"></div>
+
+	<script>
+
+		// 步骤分析：
+		//  1 获取元素
+		var xianShi = document.getElementById('xianShi');
+		var hide = document.getElementById('hide');
+		var box = document.getElementById('box');
+
+		//  2 设置两个点击事件
+		xianShi.onclick = function () {
+			//  3 分别设置标签的显示与隐藏 display
+			box.style.display = 'block';
+		};
+		hide.onclick = function () {
+			box.style.display = 'none';
+		};
+		
+		
+	</script>
+
+</body>
+</html>

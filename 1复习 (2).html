@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		
+		// Math - 工具对象
+		// 随机数 [0,1)
+		// Math.random();
+
+		// 取整
+		/*parseInt();
+		Math.ceil();
+		Math.floor();
+		Math.round();*/
+
+		// Math.abs();
+
+
+
+		// Date
+		// 当前时间：
+		// new Date();
+		// 特定时间：
+		// new Date('2015-1-1');// 推荐
+		// new Date(2015, 1, 1);
+
+		// Array
+		// 常用操作方法：必须掌握
+		// push() pop() unshift() shift()
+		
+		// 操作方法：
+		// 必须掌握： splice()  concat()  indexOf()  join()
+		/*var arr = ['a', 'b', 'c', 'd', 'e'];
+		// 参数1 ： 截取起始位置的下标
+		// 参数2 ： 截取个数
+		// 后续操作：个数不限，用于向截取位置进行添加操作
+		// 返回值 ： 截取的元素 (数组形式)
+		console.log(arr.splice(2, 1, 10, 20, 30));
+		console.log(arr);*/
+
+
+		// concat 的使用
+		/*var arr = [1, 2, 3];
+		var arr3 = arr.concat();
+		arr[0] = 100;
+		console.log(arr, arr3);*/
+
+
+		// indexOf() - ie9以下不支持
+		// 参数1：要检测的元素值
+		// 参数2：可选，默认值为0，表示检索的起始位置下标
+		// 返回值：找到就返回下标值，找不到返回-1
+		/*var arr = ['a', 'b', 'c', 'd', 'c', 'e'];
+		console.log(arr.indexOf('c', 3));*/
+
+
+		// String
+		// 基本包装类型对象：目的是为了方便对基本数据类型进行操作。
+		// 不推荐自己书写:会产生歧义，而且书写比较麻烦，js会帮我们操作。
+
+		// 特性：不可变 性
+		//    - 任何方式均无法修改字符串的原值
+
+		/*var str = 'abc';
+		str[0] = 'z';
+		console.log(str);*/
+
+		/*var str = 'abc';
+		console.log(str.replace('a', 'z'));
+		console.log(str);*/
+
+
+		// 需要掌握的方法：
+		//   slice() substr() split()
+
+		/*var str = 'a-b-c-d-e';
+		var result = str.split('-');
+		console.log(result);*/
+
+		// 与join()结合使用
+		/*var str = 'sstsstsstsstssstsststsss';
+		console.log(str.split('t').join(''));
+		console.log(str.split('t').join('z'));*/
+
+		// 创建重复字符串
+		// var str ='aaaaaaaaaa';
+		// console.log(new Array(101).join('a'));
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

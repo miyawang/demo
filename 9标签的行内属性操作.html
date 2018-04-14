@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		
+	<!-- <a id="link" href="1.html" title="我是a">a标签</a> -->
+	<!-- <img id="pic" src="1.jpg" alt="我是文字" class="img"> -->
+
+	<script>
+
+		var link = document.getElementById('link');
+		var pic = document.getElementById('pic');
+
+		// 标签行内自带属性操作：
+		// 获取操作：
+		/*console.log(link.id);
+		console.log(link.title);
+		console.log(link.href);
+		console.log(pic.src);
+		console.log(pic.alt);
+
+		// 特殊值：行内的class，需要使用className来访问
+		console.log(pic.className);
+		console.log(pic.class);*/
+
+		// 设置操作：以id为例
+		// link.id = 'box';
+		
+	</script>
+
+
+
+	<!-- 标签行内自定义属性推荐使用 data-作为前缀 -->
+	<div id="box" data-hehe="a"></div>
+
+	<script>
+
+		// 标签行内自定义属性操作：
+		var box = document.getElementById('box');
+		
+		// 有一组方法用于操作标签的行内属性：
+		console.log(box.getAttribute('data-hehe'));
+		console.log(box.getAttribute('id'));
+
+		box.setAttribute('data-hehe', '我是data-hehe的内容');
+
+		box.removeAttribute('data-hehe');
+
+		// 小结论：这组方法可以操作任意的行内属性，但是自带属性没必要使用这组方法。
+
+
+		// 回想以前的函数学习：
+		//     获取型函数必须设置返回值，设置型参数不需要设置返回值。
+
+	</script>
+	
+</body>
+</html>
