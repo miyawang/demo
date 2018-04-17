@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="隐藏DIV" id="btn">
+  <div id="box">大大大DIV</div>
+  <!-- <button id="btn" >隐藏DIV</button> -->
+  <script>
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+
+    btn.onclick = function () {
+      if (btn.value == '隐藏DIV') {
+        box.className = 'hide';
+        btn.value = '显示DIV';
+      } else {
+        box.className = 'show';
+        btn.value = '隐藏DIV';
+      }
+    }
+  </script>
+</body>
+
+</html>

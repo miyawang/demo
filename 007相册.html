@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>画廊</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    ul {
+      margin: 20px 0;
+    }
+    ul li{
+      float: left;
+      margin-left: 50px;
+      list-style: none;
+    }
+    ul li img{
+      width: 150px;
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: block;
+      /* visibility: hidden; */
+    }
+    .placeholder {
+      margin-left: 50px;
+    }
+    .des {
+      margin: 10px 0;
+      margin-left: 50px;
+
+    }
+    h1 {
+      text-align: center;
+      margin: 30px auto;
+    }
+    #bigImg {
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>相册</h1>
+  <ul id="photo" class = "clearfix">
+    <li>
+      <a href="imgs/1.jpg" title="AAAAA" >
+        <img src="imgs/1-small.jpg" alt="aaaa"  >
+      </a>
+    </li>
+    <li>
+      <a href="imgs/2.jpg"  title="BBBBB">
+        <img src="imgs/2-small.jpg" alt="">
+      </a>
+    </li>
+    <li>
+      <a href="imgs/3.jpg" title="CCCCC">
+        <img src="imgs/3-small.jpg" alt="" >
+      </a>
+    </li>
+    <li>
+      <a href="imgs/4.jpg" title="DDDDD">
+        <img src="imgs/4-small.jpg" alt="" >
+      </a>
+    </li>
+  </ul>
+  <div class="placeholder">
+      <img id="bigImg" src="imgs/placeholder.png" alt="">
+  </div>
+  <p class="des" >相册描述</p>
+  <script>
+    // 1.找对象
+    var photo = document.getElementById('photo');
+    var links = photo.getElementsByTagName('a');
+    var bigImg = document.getElementById('bigImg');
+    var p = document.getElementsByTagName('p')[0];
+
+    // 2.给a注册点击事件
+    for(var i = 0; i < links.length; i++){
+      links[i].onclick = function () {
+        bigImg.src = this.href;
+        p.innerHTML = this.title;
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>

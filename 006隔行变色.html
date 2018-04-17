@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .even {
+      background: #faa;
+    }
+    .odd {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <!-- ul>li{我是第$个li}*10 -->
+  <ul id="one">
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+    <li>我是第4个li</li>
+    <li>我是第5个li</li>
+    <li>我是第6个li</li>
+    <li>我是第7个li</li>
+    <li>我是第8个li</li>
+    <li>我是第9个li</li>
+    <li>我是第10个li</li>
+  </ul>
+  <ul>
+    <li>第1个li</li>
+    <li>第2个li</li>
+    <li>第3个li</li>
+    <li>第4个li</li>
+    <li>第5个li</li>
+    <li>第6个li</li>
+  </ul>
+  <script>
+    var one = document.getElementById('one');
+    var lis = one.getElementsByTagName('li');
+    for(var i = 0; i < lis.length; i++){
+      if (i % 2) {
+        lis[i].className = 'odd';
+      }else{
+        lis[i].className = 'even';
+      }
+    }
+  </script>
+
+</body>
+</html>

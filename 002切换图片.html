@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>切换图片</title>
+</head>
+
+<body>
+  <input type="button" value="切换图片" id="btn">
+  <img src="images/1.jpg" alt="" id="pic" width="300">
+</body>
+<script>
+  var btn = document.getElementById('btn');
+  var pic = document.getElementById('pic');
+  var i = 1;
+  btn.onclick = function () { 
+    
+    pic.src = 'images/' + i + '.jpg';
+    i++;
+    if (i == 6) {
+      i = 1;
+    }
+    console.log(i); 
+  }
+  
+</script>
+
+</html>
