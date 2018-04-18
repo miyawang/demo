@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+    }
+
+    .box1 {
+      background-color: #f00;
+      margin-bottom: -10px;
+    }
+
+    .box2 {
+      background-color: #ff0;
+      margin-bottom: -20px;
+      
+    }
+
+    .box3 {
+      background: #0f0;
+      margin-bottom: -30px;
+      
+    }
+
+    .box4 {
+      background-color: #0ff;
+      margin-bottom: -40px;
+      
+    }
+
+    .box5 {
+      background: #f0f;
+      margin-bottom: -50px;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="box4"></div>
+  <div class="box5"></div>
+
+  <script>
+    var boxs = document.getElementsByTagName('div');
+    var count = 0;
+    for (var i = 0; i < boxs.length; i++) {
+     
+      boxs[i].onclick = function () {
+        count++;
+        this.style.zIndex = count;
+        // var x = parseInt(Math.random() * 1000);
+        // var y = parseInt(Math.random() * 500);
+        // this.style.left = x + 'px';
+        // this.style.top = y + 'px';
+        console.log(count);
+        
+      }
+    }
+  </script>
+</body>
+
+</html>

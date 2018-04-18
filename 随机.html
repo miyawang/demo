@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: #ff0;
+      width: 200px;
+      height: 200px;
+      /* position: absolute; */
+    }
+  </style>
+</head>
+<body>
+  <!-- <button id="btn">按钮按钮</button> -->
+  <input type="button" id="btn" value="按钮按钮">
+  <div id="box">DIV</div>
+
+  <script>
+    // var div = document.getElementsByTagName('div');
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    btn.onclick = function (){
+      box.style.position = 'absolute';
+      var x = parseInt(Math.random()*1000);
+      var y = parseInt(Math.random()*500);
+      box.style.left = x + 'px';
+      box.style.top = y + 'px';
+    }
+  </script>
+
+</body>
+</html>
