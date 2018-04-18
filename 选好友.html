@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    select {
+      background-color: lightseagreen;
+      height: 400px;
+      width: 150px;
+      font: 24px/48px "microsoft yahei";
+    }
+  </style>
+</head>
+
+<body>
+  <select id="source" multiple>
+    <option>AAAAA</option>
+    <option>BBBBB</option>
+    <option>CCCCC</option>
+    <option>DDDDD</option>
+    <option>EEEEE</option>
+    <option>FFFFF</option>
+    <option>GGGGG</option>
+    <option>HHHHH</option>
+  </select>
+
+  <button id="btn1">&gt;&gt;</button>
+  <button id="btn2">&lt;&lt;</button>
+  <button id="btn3">&gt;</button>
+  <button id="btn4">&lt;</button>
+
+  <select id="target" multiple="multiple">
+  </select>
+
+
+  <script>
+    var source = document.getElementById('source');
+    // var opts = source.getElementsByTagName('option');
+    var target = document.getElementById('target');
+    var btnA2R = document.getElementById('btn1');
+    var btnA2L = document.getElementById('btn2');
+    var btn2R = document.getElementById('btn3');
+    var btn2L = document.getElementById('btn4');
+    //全部到右边
+    btnA2R.onclick = function () {
+      var opts = source.children;
+      for (var i = 0; i < opts.length;i++) {
+        target.appendChild(opts[i]);
+        i--;
+      }
+    }
+
+    // 全部到左边
+    btnA2L.onclick = function () {
+      var opts = target.children;
+      for (var i = 0; i < opts.length; i++) {
+        source.appendChild(opts[i]);
+        i--;
+      }
+    }
+    // 选中的到右边
+    btn2R.onclick = function () {
+      var opts = source.children;
+      for(var i = 0; i < opts.length;i++){
+        if (opts[i].selected) {
+          target.appendChild(opts[i]);
+          i--;
+        }        
+      }
+    }
+    // 选中的到左边
+    btn2L.onclick = function () {
+      var opts = target.children;
+      for(var i = 0; i < opts.length;i++){
+        if (opts[i].selected) {
+          source.appendChild(opts[i]);
+          i--;
+        }        
+      }
+    }
+  </script>
+</body>
+
+</html>
