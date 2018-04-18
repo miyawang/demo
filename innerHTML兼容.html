@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">AAA</div>
+
+  <script>
+    // var div = document.getElementsByTagName('div');
+    var box = document.getElementById('box');
+    // box.innerText = 'BBB';
+      
+    // 封装函数 封装两个  一个封装getinnerText  一个封装 setContent 
+
+    function getInnerText (element){
+      if (typeof element.innerText == 'string') {
+        return element.innnerText;
+      } else {
+        return element.textContent;
+      }
+    }
+    getInnerText(box);
+    function setContent(element,text){
+      if (typeof element.innerText == 'string') {
+        element.innerText = text;
+      } else {
+        element.textContent = text;
+      }
+      // return element;
+    }
+    setContent(box,'哈哈哈哈哈');
+    console.log(box.innerHTML);     
+    console.log(box.innerText);
+    console.log(box.textContent);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //能力检测
+    // var result;
+    // if (typeof box.innerText == 'sring') {
+    //   result = div.innerText;
+    // } else {
+    //   result = div.textContent;
+    // }
+    
+  
+  </script>
+</body>
+</html>
