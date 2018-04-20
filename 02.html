@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <!-- 2.获取地址栏信息。将搜索字符串存在一个对象里面。
+    www.baidu.com?name=123&pas=123        
+    结果返回一个对象
+    ｛ name : 123 , pas : 123 ｝ -->
+    <a id="link" href="http://www.baidu.com?name=123&pas=123">op</a>
+
+    <script>
+      var link = document.getElementById('link');
+      var str = link.href;
+      console.log(str);
+      for(var i = 0; i < str.length; i++){
+        
+      }
+      
+
+    </script>
+
+
+
+</body>
+</html>

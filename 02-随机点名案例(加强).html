@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    table {
+      margin: 50px auto;
+    }
+    
+    td {
+      padding: 15px;
+      text-align: center;
+      /*border: 1px solid #000;*/
+    }
+    
+    input {
+      width: 100px;
+      height: 40px;
+    }
+  </style>
+
+</head>
+
+<body>
+<input type="button" value="点名" id="btn">
+</body>
+
+<script>
+  //名单，@为空位，中间的@为过道。以@开头的为不随机的座位
+  var list = [
+    ["@", "@", "@", "@", "讲师", "@", "@","@","@","@"],
+    ["陈龙", "邓晓娟", "胡秀林", "汪名鉴", "陈永菊", "@", "胡玉峰", "姚莎莎", "周文娟", "薛忠"],
+    ["张聪聪", "魏秋俊", "王丹", "张彤", "黄祥", "@", "唐先菊", "郑玉梦", "陈国强", "陈少俊"],
+    ["蒋露露", "冯涛", "胡韵", "胡文杰", "胡竹君", "@", "邵文", "董海南", "何义茂", "王俊禄"],
+    ["郭可可", "余方", "梁多强", "任晓静", "李超亮", "@", "徐晨达", "张玉蒙", "李鑫妹", "安凯凯"],
+    ["@", "朱丽榕", "胡适", "蔡强", "汪苗苗", "@", "唐燕山", "孙玉竹", "段性博", "程小益"],
+    ["@", "梁新楠", "任飞", "徐舜海", "杨豪", "@", "孙一杭", "焦凯", "张士楠", "周淑雅"],
+    ["王力量", "金双姐", "颜一波", "宋云", "卓凡", "@", "刘金萨", "肖建文", "胡康建", "张鹍"],
+    ["周春丽", "李端", "李玉飞", "张家文", "姚永东", "@", "何义梅", "史伟", "崔凯", "余政"],
+    ["余坤", "苏芮", "王亭亭", "甘浩", "宋号号", "@", "王涛", "高原", "高蕾", "赵力臻"],
+    ["杨健", "芮延香", "汪勇", "史时敏", "陈印进", "@", "@","@","@","@"],
+    ["王丽莎", "王春燕", "林仙豪", "高玉翔", "宋国强", "@", "@","@","@","@"]
+  ];
+
+  
+  var btn = document.getElementById("btn");
+  //1. 生成table，加到body里面
+  var table = document.createElement("table");
+  document.body.appendChild(table);
+  
+  
+  var arr = [];
+  
+  //2. 根据list生成tr
+  for(var i = 0; i < list.length; i++) {
+    //2.1 生成元素
+    var tr = document.createElement("tr");
+    //2.2 添加到table上
+    table.appendChild(tr);
+    
+    //2.3 设置内容,给tr添加td
+    // 根据list[i]生成td
+    for(var j = 0; j < list[i].length; j++) {
+      //2.3.1 生成td
+      var td = document.createElement("td");
+      //2.3.2 添加到tr
+      tr.appendChild(td);
+      //2.3.3 设置内容
+      if(list[i][j] != "@"){
+        //说明坐人
+        td.innerHTML = list[i][j];
+        td.style.backgroundColor = "yellowgreen";
+        
+        //好处：作弊
+        arr.push(td);
+      }
+    }
+  }
+  console.log(arr);
+  
+  //2. 给btn注册点击事件
+  btn.onclick = function () {
+    
+    //干掉所有人
+    for(var i = 0; i < arr.length; i++) {
+      arr[i].style.backgroundColor = "yellowgreen";
+    }
+    
+    var random = parseInt(Math.random() * arr.length);
+    arr[random].style.backgroundColor = "hotpink";
+  };
+  
+  
+
+</script>
+</html>
