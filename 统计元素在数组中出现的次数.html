@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 统计元素在数组中出现的次数
+    var arr =['a','s','d','s','w','e','d','s','d'];
+    var obj = {};
+    // 遍历数组，判断arr[i]在对象中是否存在，如果有，只要让原来的值加1
+    // 如果没有，增加这个属性，并且让值为1
+    for(var i = 0; i < arr.length; i++){
+      // 判断arr[i]在对象中是否存在
+      if (arr[i] in obj) {
+        obj[arr[i]]++;
+      }else{
+        obj[arr[i]] = 1;
+      }
+    }
+    console.log(obj);
+    
+    // 如何判断对象是否有某个属性
+
+  </script>
+</body>
+</html>
