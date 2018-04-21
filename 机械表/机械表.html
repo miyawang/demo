@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .clock {
+      width: 600px;
+      height: 600px;
+      margin: 100px auto;
+      background: url(images/clock.jpg) no-repeat;
+      position: relative;
+    }
+
+    .clock div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(images/hour.png) no-repeat center center;
+    }
+
+    #m {
+      background-image: url(images/minute.png);
+    }
+
+    #s {
+      background-image: url(images/second.png);
+      /*让盒子旋转*/
+      /* transform: rotate(30deg); */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clock">
+    <div id="h"></div>
+    <div id="m"></div>
+    <div id="s"></div>
+  </div>
+</body>
+<script>
+  //如何显示当前的时间 设置h m s 三个div的旋转角度
+  
+  
+  var s = document.getElementById('s');
+  var m = document.getElementById('m');
+  var h = document.getElementById('h');
+  function setTime() {
+    var date = new Date();
+    var second = date.getSeconds() + date.getMilliseconds()/1000;
+    var minute = date.getMinutes() + second/60;
+    var hour = date.getHours() + minute/60;
+    console.log(hour);
+
+  
+    console.log(minute);
+
+    
+    s.style.transform = 'rotate(' + 6 * second + 'deg)';
+    m.style.transform = 'rotate(' + 6 * minute + 'deg)';
+    h.style.transform = 'rotate(' + 30 * hour + 'deg)';
+    
+    
+  }
+ 
+
+
+  setInterval(setTime,1000);
+
+</script>
+
+</html>
