@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>简单运动</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box1 {
+      width: 200px;
+      height: 200px;
+      background-color: #33f;
+      /* 运动时，先设置绝对定位 */
+      position: absolute;
+      left: 100px;
+      margin-bottom: 50px;
+    }
+    #box2 {
+      width: 200px;
+      height: 200px;
+      background-color: #33f;
+      /* 运动时，先设置绝对定位 */
+      position: absolute;
+      left: 500px;
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">按钮</button>
+  <!-- <button id="btn1">按钮1</button>
+  <button id="btn2">按钮2</button> -->
+  <div id="box1"></div>
+  <div id="box2"></div>
+
+  <script>
+    var btn = document.getElementById('btn');
+    // var btn1 = document.getElementById('btn1');
+    // var btn2 = document.getElementById('btn2');
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+
+
+    // 设置一个按钮点击 控制两个元素运动
+    btn.onclick = function (){
+      animate(box1,200);
+      animate(box2,200);
+    }
+    
+    // var box = document.getElementById('box');
+    // var leftVal = 0;
+    var timer = null;
+    // btn.onclick = function () {
+    //   timer = setInterval(function () {
+    //     //获取元素当前位置 current
+    //     var current = box.offsetLeft;
+    //     //套用运动公式  元素的新位置  = 元素的原始位置 + 步长
+    //     var step = 10;
+    //     current = current + step;
+
+
+    //     // leftVal += 10;
+    //     // box.style.left = leftVal + 'px';
+    //     // 设置运动的条件 
+    //     if (current <= 500) {
+    //       // 将current设置给left属性即可
+    //       box.style.left = current + 'px';
+    //     } else {
+    //       // 清除定时器
+    //       clearInterval(timer);
+    //     }
+    //     console.log('stop');
+
+    //   }, 20);
+    // }
+      // btn.onclick = function (){
+      //   animate(box,200);
+      // }
+      // btn2.onclick = function (){
+      //   animate(box,500);
+      // }
+    function animate(element, target) {
+      timer = setInterval(function () {
+        clearInterval(element.timer);
+        element.timer = setInterval(function(){
+          var current = element.offsetLeft;
+        // 2.套用运动公式
+        var step = 10;
+        // 2.1设置步长
+        step = target > current ? step : -step;
+        // 4.设置运动条件
+        // 需要考虑，如果运动举例无法整除步长 会出现抖动问题
+        // 可以通过判断当前位置和目标位置之间的距离 与 步长之间的大小关系设置
+        // 如果不足一个步长的距离 直接运动到目标位置target即可
+        // if (target !== current) {
+          if(Math.abs(current - target) > Math.abs(step)){
+
+          // 2.2运动公式
+          // 元素的新位置=元素的原始位置+步长
+          current += step;
+          // 3.将current设置给left属性
+          element.style.left = current + 'px';
+        } else {
+          // 5.清除定时器
+          clearInterval(timer);
+        }
+      },50);
+        })
+        // 1.获取元素当前位置
+
+        
+    }
+  </script>
+</body>
+
+</html>
