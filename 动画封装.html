@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background: #00f;
+      border-top: 10px solid #ff0;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">跑到800</button>
+  <button id="btn2"> 回200</button>
+  <div id="box"></div>
+  <script>
+    var btn = document.getElementById('btn');
+    var btn2 = document.getElementById('btn2');
+    var box = document.getElementById('box');
+    var timer; //在外部定义一个变量 用来保存定时器的id
+    btn.onclick = function () {
+      animate(box,800,20);
+    }
+    btn2.onclick = function () {
+      animate(box,400,10);
+    }
+    //封装点击事件的函数
+    function animate(element,target, step) {
+      // 如果已经有定时器，先把之前的定时器给清除掉
+      if (timer) {
+        console.log('清除了');
+        clearInterval(timer);
+      }
+      timer = setInterval(function () {
+        console.log('定时器内');
+        // 先拿到box与左边的间距
+        var mg = element.offsetLeft;
+        if (mg > target) {
+          step = - Math.abs(step);
+        }
+        // 把拿到的值添加一个距离
+        if (Math.abs(target - mg) > Math.abs(step)) {
+          // 看下现在的位置与目标还有多远 
+          // 如果现在的位置距离目标还够一步  就直接加一步
+          mg += step;
+        } else {
+          // 如果现在的位置距离目标已经不够一步 直接到目标
+          mg = target;
+          clearInterval(timer);
+        }
+         //把修改后的值重新设置给box
+        element.style.left = mg + 'px';
+      }, 16);
+
+    }
+      
+
+
+  </script>
+</body>
+
+</html>
