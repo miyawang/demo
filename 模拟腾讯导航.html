@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    .main {
+      margin: 0 auto;
+      width: 1000px;
+      margin-top: 10px;
+
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="top" id="topPart">
+  <img src="images/top.png" alt=""/>
+</div>
+<div class="nav" id="navBar">
+  <img src="images/nav.png" alt=""/>
+</div>
+<div class="main" id="mainPart">
+  <img src="images/main.png" alt=""/>
+</div>
+
+
+<script>
+
+  //1. 给window注册onscroll事件
+  //2. 获取页面的滚动距离， 获取topPart的高度， 如果滚动距离超过了高度，让navBar固定定位即可。
+  //在js里面， name top:
+  var topPart = document.getElementById("topPart");
+  var navBar = document.getElementById("navBar");
+
+  window.onscroll = function (){
+    if(window.pageYOffset >= topPart.offsetHeight){
+      navBar.className = 'fixed';
+    } else {
+      navBar.className = '';
+    }
+  }
+
+
+  // window.onscroll = function (){
+  //   if (window.pageYOffset >= topPart.offsetHeight) {
+  //     navBar.className = 'fixed';
+  //   } else {
+  //     navBar.className = '';
+  //   }
+  // }
+</script>
+
+</body>
+</html>
