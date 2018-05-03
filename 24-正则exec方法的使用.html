@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 正则的 exec() 方法：
+    // 作用：为指定的一段字符串执行搜索匹配操作，将符合规则的字符串提取出来
+    // 注意：这个方法如果没有匹配到如何内容，结果为：null
+
+    // 从字符串 'abcdefgh' 中找出 'ef' 的位置
+    // var r = /ef1/
+    // var match = r.exec('abcdefgh')
+    // console.log(match)
+
+    // 返回值的说明：
+    // console.log(match.input) // 表示：被匹配的字符串
+    // console.log(match.index) // 表示：正则匹配出来的内容，在字符串中索引号
+    // console.log(match[0]) // 表示：正则表达式匹配出来的内容
+
+    // 作用：要么匹配 food，要么匹配t
+    var r = /food|t/
+    var m = r.exec('foot')
+    // console.log(m[0])
+    console.log(m)
+
+  </script>
+</body>
+
+</html>

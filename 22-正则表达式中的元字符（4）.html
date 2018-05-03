@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 首尾元字符
+    // ^ : 匹配开头位置
+    // $ : 匹配结尾位置
+
+    // var r = /^\d/
+    // console.log( r.test('abc123') ) // false
+    // console.log( r.test('0abc123') ) // true
+
+    // var r = /\w$/
+    // console.log( r.test('123') ) // true
+    // console.log( r.test('123...') ) // false
+
+    // 例子:
+    // 规则:以3个a结尾就可以
+    // var r = /a{3}$/
+    // console.log( r.test('aa') ) // false
+    // console.log( r.test('aaa') ) // true
+    // console.log( r.test('aaaa') ) // true
+    
+    // 以a开头和以a结尾,并且只能包含3个a
+    // var r = /^a{3}$/
+    // console.log( r.test('aa') ) // false
+    // console.log( r.test('aaa') ) // true
+    // console.log( r.test('aaaa') ) // false
+
+    // 验证用户名: 允许出现 数字/字母/下划线 ,长度为:6 - 12位
+    // var r = /^\w{6,12}$/
+    // console.log( r.test('.........123456.........') ) // false
+    // console.log( r.test('123456789011') ) // true
+    // console.log( r.test('123') ) // false
+
+
+  </script>
+</body>
+
+</html>

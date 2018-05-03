@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // [xyz] | 字符集合，匹配集合中的任意一个字符，可以用'-'指定范围
+    // [^xyz] | 反义字符集合，匹配任意不在集合中的一个字符
+
+    // var r = /[\da-z]/
+    // console.log( r.test('A') ) // false
+    // console.log( r.test('a') ) // true
+
+    // var r = /[0-3a-f]/
+
+    // var r = /[^\d]/
+    // console.log( r.test('123') ) // false
+    // console.log( r.test('aa') ) // true
+
+
+    // `x|y`：匹配 x 或 y。注意：`|`的优先级最低
+    // var r = /a|b/
+    // console.log( r.test('a') ) // true
+    // console.log( r.test('b') ) // true
+    // console.log( r.test('c') ) // false
+
+    // var r = /food|t/
+    // console.log( r.test('food') ) // true
+    // console.log( r.test('foot') ) // true
+    
+  </script>
+</body>
+
+</html>

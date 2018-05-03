@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 练习：从字符串 'abcdefghabcdefghabcdefgh' 中找出所有 'e' 的位置
+    var str = 'abcdefghabcdefghabcdefgh'
+    // g 表示：全局匹配，如果不加g，每次都会从第一个字符开始匹配。如果加了g，每次都会基于上一次的位置，往后面搜索
+    var r = /e/g
+    
+    // 创建一个数组，用来存储获取到的所有e的索引号
+    var arr = []
+    // var index = -1
+    var m
+    
+    // 执行过程：
+    // 1 先调用 exec() 方法
+    // 2 将结果交给变量m
+    // 3 判断 exec() 方法的返回是否为 null
+    // 4 如果不为null，就执行 while 中的代码
+    while ( (m = r.exec(str)) !== null ) {
+      arr.push(m.index)
+    }
+    
+    // 方式二：
+    /* m = r.exec(str)
+    while (m !== null) {
+      arr.push(m.index)
+      m = r.exec(str)
+    } */
+    
+    console.log(arr)
+    
+    // 手动一次次调用：
+    /* var m = r.exec(str) // 4
+    console.log(m)
+
+    var m1 = r.exec(str) // 12
+    console.log(m1)
+
+    var m2 = r.exec(str) // 20
+    console.log(m2)
+
+    var m3 = r.exec(str) // null
+    console.log(m3) */
+  </script>
+</body>
+
+</html>
