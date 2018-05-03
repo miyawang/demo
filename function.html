@@ -10,26 +10,160 @@
 
 <body>
   <script>
-    var f1 = function f2() { }
-    console.log(f1.name);
+    // var f1 = function f2() { }
+    // console.log(f1.name);
     // console.log(f2.name);
 
     // var f1 = function f2() { }
     // console.log(f2)
 
-    function f() {
-      console.log(this)
-    }
-    f.call(1)
+    // function f() {
+    //   console.log(this)
+    // }
+    // f.call(1)
 
-    function f() {
-      'use strict'
-      console.log(this)
-    }
-    f.call(1)
+    // function f() {
+    //   'use strict'
+    //   console.log(this)
+    // }
+    // f.call(1)
+
+    //     function f(){
+    //     console.log(this)
+    // }
+    // f.call()
+
+    // function f(){
+    //     'use strict'
+    //     console.log(this)
+    // }
+    // f.call()
+
+    // var a = console.log(1)
+    // console.log(a);
+
+    // function f(){
+    //     return 1
+    // }
+    // a = f
+    // console.log(a);
+
+    // function f(){
+    //     return 1
+    // }
+    // var a = f.call()
+    // console.log(a);
+
+    // var a = 1,2
+
+    // var a = (1,2)
+    // var a = (1, console.log(2))
+
+    // function f(){
+    //     return function f2(){}
+    // }
+    // var a = f.call()
+    // console.log(a);
+
+
+    // function f(){
+    //     return function f2(){}
+    // }
+    // var a = f.call()
+    // var b = a.call()
+
+    // console.log(b);
+
+    // function f(){
+    //     return function f2(){}
+    // }
+    // var a = f.call().call()
+    // console.log(a);
+
+
+    // function f1(){
+
+    // function f2(){
+    //     console.log(this)
+    // }
+    // f2.call()
+    // }
+    // var obj = {name: 'obj'}
+    // f1.call( obj )
+
+    var arr = [{ name: "张三" },
+    { name: "李四" },
+    { name: "王五" },
+    { name: "赵钱" },
+    { name: "孙李" }];
+
+    // for (var i = 0; i < arr.length; i++) {
+    //   arr[i].show = function () {
+    //     console.log(arr[i].name);
+    //   };
+    // }
+    // console.log(i)
+
+    // for (var j = 0; j < arr.length; j++) {
+    //   arr[j].show(); 
+    // }
 
 
 
+  //     function fb(num) {
+       
+  //       if(num === 0 || num ===1){
+  //         return 1
+  //       }
+  //       num = (num - 1) + (num - 2)
+  //         // return num
+  //         console.log(num);
+         
+  //     }
+      
+      
+  //  fb(10)
+
+
+   // 闭包 + 缓存：
+    // 1 使用闭包，为了保护缓存对象
+    // 2 缓存：为了记录已经计算过的数据
+    
+    // // 外层函数fn是为了形成闭包，保护 缓存对象cache
+    // var fib = function fn() {
+    //   // 缓存对象
+    //   // 键：要计算的索引号
+    //   // 值：索引号对应的计算后的值
+    //   var cache = {}
+      
+    //   // 内部函数用于实现递归计算菲波那契数列
+    //   return function fib (num) {
+    //     // 1 判断缓存中有没有数据
+    //     if (num in cache) {
+    //       // 缓存中有
+    //       return cache[num]
+    //     }
+
+    //     // 2 如果没有
+    //     //  先计算
+    //     //  再存到缓存中
+    //     if (num === 0 || num === 1) {
+    //       return cache[num] = 1
+    //     }
+
+    //     return cache[num] = fib(num - 1) + fib(num - 2)
+    //   }
+    // }()
+
+    // var ret = fib(10)
+    // console.log(ret)
+
+
+        // `x|y`：匹配 x 或 y。注意：`|`的优先级最低
+    var r = /a|b/
+    console.log( r.test('a') ) // true
+    console.log( r.test('b') ) // true
+    console.log( r.test('c') ) // true
   </script>
 </body>
 
