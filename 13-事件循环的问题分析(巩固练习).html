@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    li {
+      height: 30px;
+      line-height: 30px;
+      background: #def;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>这是第01个li元素内容</li>
+    <li>这是第02个li元素内容</li>
+    <li>这是第03个li元素内容</li>
+    <li>这是第04个li元素内容</li>
+    <li>这是第05个li元素内容</li>
+    <li>这是第06个li元素内容</li>
+    <li>这是第07个li元素内容</li>
+    <li>这是第08个li元素内容</li>
+    <li>这是第09个li元素内容</li>
+    <li>这是第10个li元素内容</li>
+  </ul>
+
+  <script>
+    // 巩固练习: 点击li元素,打印对应索引号
+    var lis = document.getElementsByTagName('li')
+    for (var i = 0; i < lis.length; i++) {
+
+      lis[i].onclick = function (n) {
+        return function () {
+          alert(n)
+        }
+      }(i)
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 问题：
+    // for 会执行：10次
+    // 每次for循环中都有一个 setTimeout
+    // 所以，将来会打印10次
+
+    // 打印结果是什么？？？
+    // 1 for 的代码是会被立即执行的（主线程）
+    // 2 10个setTimeout中的回调函数是延后执行的
+    // 代码执行顺序：先执行10次for循环，等到for执行完成，再执行回调函数中的代码
+    // for (var i = 0; i < 10; i++) {
+    //   setTimeout(function () {
+    //     console.log(i)
+    //   }, 0)
+    // }
+    // console.log('for循环中的i为：', i)
+
+    /* var i
+    for (i = 0; i < 10; i++) {
+      setTimeout(function () {
+        console.log(i)
+      }, 0)
+    }
+    console.log('for循环中的i为：', i) */
+
+    // 问题2：如何打印 0-9 ？？？ 闭包
+
+  </script>
+</body>
+
+</html>
