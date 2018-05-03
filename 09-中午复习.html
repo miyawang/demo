@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 在js中一般是通过 {} 来表示缓存
+
+    // 缓存使用的步骤：
+    // 1 先判断缓存中有没有我们需要的数据
+    // 2 如果有，就直接拿出来使用
+    // 3 如果没有，先计算然后放到缓存中
+
+    // 缓存 + 闭包：解决菲波那契数列重复计算的问题
+
+    // 1 JS是单线程的编程语言
+    // 2 浏览器中提供了三个与JS密切相关的线程：
+    //  2.1 主线程 ===> 用来执行JS代码，所有的JS代码，都是在主线程中执行的
+    //  2.2 UI线程 ===> 负责渲染页面
+    //  2.3 事件循环线程 ===> 负责遍历事件队列，查看事件队列中有没有等待执行的回调函数
+    //                       如果有就取出来，交给主线程来执行这个回调函数
+
+    // 延后执行的代码：setTimeout、setInterval的回调函数
+    // 将来： ajax中的回调函数
+
+  </script>
+</body>
+
+</html>
