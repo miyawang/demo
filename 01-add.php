@@ -50,34 +50,7 @@
     // header('location:02-list.php');
 
 
-    // include_once './fn.php'; // 引入工具函数
-    // $username = $_POST['username'];
-    // $nickname = $_POST['nikename'];
-    // $age = $_POST['age'];
-    // $tel = $_POST['tel'];
-    // $sex = $_POST['sex'];
-    // $class = $_POST['class'];
-    // $photo = '';
-    // //$_GET $_POST $_FILES是PHP系统提供的超全局变量，是一个数组，里面存放了表单通过get方式提交的数据。
-    // $file = $_FILES['photo']; //二维数组
-
-    // if($file['error'] === 0){
-    //     $ftmp = $file['tmp_name'];
-    //     $ext = strrchr($file['name'],'.');
-    //     $newName = './uploads/' .time().rand(1000,9999).$ext;
-    //     move_uploaded_file($ftmp,$newName);
-    //     // move_uploaded_file($path, $newPath);可以保存临时图片
-    //     $photo = $newName;
-    // }
-    // $sql = "insert into stu (name,nickname,age,tel,sex,photo,classid)
-    //         values ('$username','$nickname',$age,'$tel','$sex','$photo',class)";
-    // echo $sql;
-    // my_exec($sql); //执行
-    // header('location:02-list.php'); //跳转
-    
-    
-
-    include_once './fn.php';
+    include_once './fn.php'; // 引入工具函数
     $username = $_POST['username'];
     $nickname = $_POST['nikename'];
     $age = $_POST['age'];
@@ -85,20 +58,47 @@
     $sex = $_POST['sex'];
     $class = $_POST['class'];
     $photo = '';
+    //$_GET $_POST $_FILES是PHP系统提供的超全局变量，是一个数组，里面存放了表单通过get方式提交的数据。
+    $file = $_FILES['photo']; //二维数组
 
-    $file = $_FILES['photo'];
-    if($file['error'] ===0){
+    if($file['error'] === 0){
         $ftmp = $file['tmp_name'];
-        $ext = strrchr($file['name'],'.');//从右往左
-        $newName = './uploads/'.time().rand(1000,9999).$ext;
+        $ext = strrchr($file['name'],'.');
+        $newName = './uploads/' .time().rand(1000,9999).$ext;
         move_uploaded_file($ftmp,$newName);
+        // move_uploaded_file($path, $newPath);可以保存临时图片
         $photo = $newName;
     }
     $sql = "insert into stu (name,nickname,age,tel,sex,photo,classid)
-    values('$username','$nickname','$age','$tel','$sex','$photo','$class')";
+            values ('$username','$nickname',$age,'$tel','$sex','$photo',class)";
     echo $sql;
-    my_exec($sql);
-    header('location:02-list.php');
+    my_exec($sql); //执行
+    header('location:02-list.php'); //跳转
+    
+    
+
+    // include_once './fn.php';
+    // $username = $_POST['username'];
+    // $nickname = $_POST['nikename'];
+    // $age = $_POST['age'];
+    // $tel = $_POST['tel'];
+    // $sex = $_POST['sex'];
+    // $class = $_POST['class'];
+    // $photo = '';
+
+    // $file = $_FILES['photo'];
+    // if($file['error'] ===0){
+    //     $ftmp = $file['tmp_name'];
+    //     $ext = strrchr($file['name'],'.');//从右往左
+    //     $newName = './uploads/'.time().rand(1000,9999).$ext;
+    //     move_uploaded_file($ftmp,$newName);
+    //     $photo = $newName;
+    // }
+    // $sql = "insert into stu (name,nickname,age,tel,sex,photo,classid)
+    // values('$username','$nickname','$age','$tel','$sex','$photo','$class')";
+    // echo $sql;
+    // my_exec($sql);
+    // header('location:02-list.php');
 
 
 
